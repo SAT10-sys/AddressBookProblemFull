@@ -41,5 +41,13 @@ namespace AddressBookProblemFull
             }
             return false;
         }
+        public void RemoveContact(string firstName)
+        {
+            foreach(Contacts c in contactList)
+            {
+                if (c.firstName.Equals(firstName))
+                    contactList.Remove(c);
+            }
+        }
     }
 }
