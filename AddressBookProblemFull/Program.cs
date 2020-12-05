@@ -55,9 +55,11 @@ namespace AddressBookProblemFull
                                 Console.WriteLine("Invalid choice");
                             break;
                         case 2:
-                            Console.WriteLine("Enter First Name of the Contact to be edited");
+                            Console.WriteLine("Enter First Name, LastName and PhoneNumber of the Contact to be edited");
                             string firstName = Console.ReadLine();
-                            bool result = addressBookMain.CheckFirstName(firstName);
+                            string lastName = Console.ReadLine();
+                            string phoneNumber = Console.ReadLine();
+                            bool result = addressBookMain.CheckName(firstName, lastName, phoneNumber);
                             if (result == true)
                             {
                                 Console.WriteLine("Enter the edited details seperated by ,");
@@ -69,9 +71,11 @@ namespace AddressBookProblemFull
                                 Console.WriteLine("No contacts found");
                             break;
                         case 3:
-                            Console.WriteLine("Enter First Name of the Contact to be deleted");
+                            Console.WriteLine("Enter First Name, LastName and PhoneNumber of the Contact to be edited");
                             string firstName1 = Console.ReadLine();
-                            bool result1 = addressBookMain.CheckFirstName(firstName1);
+                            string lastName1 = Console.ReadLine();
+                            string phoneNumber1 = Console.ReadLine();
+                            bool result1 = addressBookMain.CheckName(firstName1, lastName1, phoneNumber1);
                             if (result1 == true)
                             {
                                 addressBookMain.RemoveContact(firstName1);
