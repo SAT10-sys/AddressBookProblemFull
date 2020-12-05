@@ -14,11 +14,20 @@ namespace AddressBookProblemFull
             switch(choice)
             {
                 case 1:
+                    RegStart:
                     Console.WriteLine("Enter the following details seperated by ,");
                     string[] details;
                     details = Console.ReadLine().Split(",");
                     addressBookMain.AddContact(details[0], details[1], details[2], details[3], details[4], details[5], details[6], details[7]);
                     Console.WriteLine("Contact added");
+                    Console.WriteLine("Add More Contacts(Yes/No");
+                    string ans = Console.ReadLine().ToLower();
+                    if (ans == "yes")                    
+                        goto RegStart;                          
+                    else if (ans == "no")
+                        break;
+                    else
+                        Console.WriteLine("Invalid choice");
                     break;
                 case 2:
                     Console.WriteLine("Enter First Name of the Contact to be edited");
@@ -45,6 +54,9 @@ namespace AddressBookProblemFull
                     }
                     else
                         Console.WriteLine("No contacts found");
+                    break;
+                default:
+                    Console.WriteLine("Invalid choice");
                     break;
             }                       
         }
